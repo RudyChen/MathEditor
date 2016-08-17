@@ -22,12 +22,32 @@ namespace MathEditorView
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainWindowViewModel mainViewModel = new MainWindowViewModel();
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = mainViewModel;
         }
 
         private double inputOffsetY = 0;
+
+        private PageBlock currentPage=new PageBlock();
+
+        public PageBlock CurrentPage
+        {
+            get { return currentPage; }
+            set { currentPage = value; }
+        }
+
+        private RowBlock currentRow=new RowBlock() { RowTop=10};
+
+        public RowBlock CurrentRow
+        {
+            get { return currentRow; }
+            set { currentRow = value; }
+        }
+
+
 
         private void ControlButton_Clicked(object sender, RoutedEventArgs e)
         {

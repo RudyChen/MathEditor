@@ -4,8 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MathEditorView"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <ObjectDataProvider MethodName="GetType" ObjectType="{x:Type sys:Type}" x:Key="colorsTypeOdp">
+            <ObjectDataProvider.MethodParameters>
+                <sys:String>System.Windows.Media.Colors, PresentationCore,
+            Version=3.0.0.0, Culture=neutral,
+            PublicKeyToken=31bf3856ad364e35</sys:String>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+        <ObjectDataProvider ObjectInstance="{StaticResource colorsTypeOdp}" 
+                            MethodName="GetProperties" x:Key="colorPropertiesOdp">
+        </ObjectDataProvider>
+    </Window.Resources>
     <DockPanel>
         <DockPanel DockPanel.Dock="Bottom">
             <WrapPanel DockPanel.Dock="Left">
@@ -21,9 +34,32 @@
                 <Button Content="m" FontStyle="Italic" FontFamily="Times New Roman" Width="20"></Button>
             </WrapPanel>
         </DockPanel>
+        <WrapPanel DockPanel.Dock="Top">
+            <TextBlock Text="字体：" VerticalAlignment="Center" Margin="6,0,2,0"></TextBlock>
+            <ComboBox ItemsSource="{Binding Path=AllFonts}" Focusable="False" DisplayMemberPath="FontName" SelectedValuePath="FontFamilyEntity" SelectedItem="{Binding Path=SelectedFontFamily}"></ComboBox>
+            <TextBlock Text="大小：" VerticalAlignment="Center" Margin="6,0,2,0"></TextBlock>
+            <ComboBox ItemsSource="{Binding Path=FontSizeList}" Focusable="False" DisplayMemberPath="." SelectedValuePath="." SelectedItem="{Binding Path=SelectedFontSize}"></ComboBox>
+            <TextBlock Text="颜色：" VerticalAlignment="Center" Margin="6,0,2,0"></TextBlock>
+            <ComboBox ItemsSource="{Binding Path=Foregrounds}" Focusable="False" SelectedItem="{Binding Path=SelectedColor}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>                       
+                            <Rectangle Fill="{Binding .}" Margin="1 3" Height="10" Width="10"></Rectangle>                       
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <!--<ComboBox Name="colorCombobox" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Source={StaticResource colorPropertiesOdp}}" >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Fill="{Binding Name}" Margin="1 3" Height="10" Width="10"></Rectangle>                            
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>-->
+        </WrapPanel>
         <Border BorderBrush="Orange" BorderThickness="1" DockPanel.Dock="Top">
             <Canvas Name="editorCanvas" Focusable="False" MouseLeftButtonDown="editorCanvas_MouseLeftButtonDown" Background="White">
-                <TextBox Canvas.Left="0" Canvas.Top="0" Name="caretTextBox" Width="Auto" Height="24" Background="Transparent" BorderThickness="0" PreviewTextInput="caretTextBox_PreviewTextInput" FontFamily="Times New Roman" FontStyle="Italic"></TextBox>
+                <TextBox Canvas.Left="0" Canvas.Top="10" Name="caretTextBox" Width="Auto" Height="24" Background="Transparent" BorderThickness="0" PreviewTextInput="caretTextBox_PreviewTextInput" FontFamily="Times New Roman" FontStyle="Italic"></TextBox>
             </Canvas>
         </Border>
         
