@@ -28,10 +28,13 @@ namespace MathEditorView
             SelectedFontSize = fontSizeList.ToList().Find(p => p == 16);
             foregrounds = new ObservableCollection<string>() { "Black", "Gray", "Green", "Blue", "Yellow","Orange" };
             selectedColor = foregrounds.First();            
-            selectedFontFamily = myFontList.Find(p => p.FontName == "微软雅黑");
+            selectedFontFamily = myFontList.Find(p => p.FontName == "宋体");
         }
 
-        
+        public void ChangeSelectedFontFamily(string fontName)
+        {
+            SelectedFontFamily = fonts.ToList().Find(p => p.FontName == fontName);
+        }
 
         public string SelectedColor
         {

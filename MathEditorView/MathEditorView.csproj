@@ -57,6 +57,7 @@
     </ApplicationDefinition>
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="MyFontFamily.cs" />
+    <Compile Include="TextBlockData.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>

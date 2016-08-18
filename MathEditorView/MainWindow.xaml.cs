@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -47,17 +48,17 @@ namespace MathEditorView
             set { currentRow = value; }
         }
 
-
+        private bool isEquationSelected = false;
 
         private void ControlButton_Clicked(object sender, RoutedEventArgs e)
         {
-            Button commandBtn = sender as Button;
-
+            ButtonBase commandBtn = sender as ButtonBase;
+            var viewModel = this.DataContext as MainWindowViewModel;
             if (commandBtn.Name == "exponentialButton")
             {
                 //System.Windows.Input.InputLanguageManager.SetInputLanguage()
                 //InputLanguageManager.SetInputLanguage(caretTextBox, CultureInfo.CreateSpecificCulture("zh-Hans"));
-
+                              
                 inputOffsetY = caretTextBox.FontSize * 0.3;
                 var lineOfssetX = AcceptInputText(0.0, inputOffsetY);
                 SetCaretLocation(lineOfssetX, 0);
@@ -66,6 +67,26 @@ namespace MathEditorView
             {
                 var lineOfssetX = AcceptInputText(0, 0);
                 SetCaretLocation(lineOfssetX, inputOffsetY);
+            }
+            else if (commandBtn.Name== "equationToggleButton")
+            {
+                var equationBtn = sender as ToggleButton;
+                if (equationBtn.IsChecked==true)
+                {
+                    isEquationSelected = true;
+                    viewModel.ChangeSelectedFontFamily("Times New Roman");
+                    caretTextBox.FontStyle = FontStyles.Italic;
+                }
+                else
+                {
+                    isEquationSelected = false;
+                    viewModel.ChangeSelectedFontFamily("宋体");
+                    caretTextBox.FontStyle = FontStyles.Normal;
+                }
+
+                var lineOfssetX = AcceptInputText(0, 0);
+                SetCaretLocation(lineOfssetX, inputOffsetY);
+
             }
         }
 
@@ -78,13 +99,26 @@ namespace MathEditorView
             Canvas.SetTop(caretTextBox, oldCaretTop + y);
         }
 
+        private TextBlockData GenerateTextBlockData(double rowTop,double rowTopOffsetY)
+        {
+            TextBlockData textBlockData = new TextBlockData();
+            textBlockData.Text= caretTextBox.Text;
+            textBlockData.FontSize= caretTextBox.FontSize;
+
+           
+
+
+            return textBlockData;
+        }
+
         private double AcceptInputText(double lineOffsetX, double lineOffsetY)
         {
+            var viewModel = this.DataContext as MainWindowViewModel;
             TextBlock inputedTextBlock = new TextBlock();
             inputedTextBlock.Text = caretTextBox.Text;
-            inputedTextBlock.FontSize = caretTextBox.FontSize;
-            inputedTextBlock.FontStyle = caretTextBox.FontStyle;
-            inputedTextBlock.FontFamily = caretTextBox.FontFamily;
+            inputedTextBlock.FontSize = caretTextBox.FontSize;           
+            inputedTextBlock.FontFamily = viewModel.SelectedFontFamily.FontFamilyEntity;
+            inputedTextBlock.FontStyle = FontStyles.Italic; //isEquationSelected ? FontStyles.Normal : FontStyles.Italic;           
             FormattedText formatted = new FormattedText(inputedTextBlock.Text, CultureInfo.CurrentCulture, FlowDirection.LeftToRight, new Typeface(inputedTextBlock.FontFamily.ToString()), inputedTextBlock.FontSize, inputedTextBlock.Foreground);
 
             var oldCaretLeft = Canvas.GetLeft(caretTextBox);

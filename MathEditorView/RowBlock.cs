@@ -9,9 +9,17 @@ namespace MathEditorView
 {
     public class RowBlock
     {
-        private List<TextBlock> blocks=new List<TextBlock>();
+        private List<TextBlockData> blocks=new List<TextBlockData>();
 
         private double rowTop;
+
+        private double height;
+
+        public double Height
+        {
+            get { return height; }
+            set { height = value; }
+        }
 
         public double RowTop
         {
@@ -19,7 +27,7 @@ namespace MathEditorView
             set { rowTop = value; }
         }
 
-        public List<TextBlock> Blocks
+        public List<TextBlockData> Blocks
         {
             get { return blocks; }
             set { blocks = value; }
