@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ContentBlock.cs" />
     <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="MyFontFamily.cs" />
     <Compile Include="TextBlockData.cs" />

@@ -14,3 +14,19 @@ E:\软件源码\公式编辑器\MathEditor\MathEditorView\obj\Debug\MathEditorVi
 E:\软件源码\公式编辑器\MathEditor\MathEditorView\obj\Debug\MathEditorView.pdb
 E:\软件源码\公式编辑器\MathEditor\MathEditorView\obj\Debug\Window1.g.cs
 E:\软件源码\公式编辑器\MathEditor\MathEditorView\obj\Debug\Window1.baml
+D:\Git Projects\MathEditor\MathEditorView\bin\Debug\MathEditorView.exe.config
+D:\Git Projects\MathEditor\MathEditorView\obj\Debug\MathEditorView.exe
+D:\Git Projects\MathEditor\MathEditorView\obj\Debug\MathEditorView.pdb
+D:\Git Projects\MathEditor\MathEditorView\bin\Debug\MathEditorView.exe
+D:\Git Projects\MathEditor\MathEditorView\bin\Debug\MathEditorView.pdb
+D:\Git Projects\MathEditor\MathEditorView\obj\Debug\MathEditorView.csprojResolveAssemblyReference.cache
+D:\Git Projects\MathEditor\MathEditorView\obj\Debug\MainWindow.g.cs
+D:\Git Projects\MathEditor\MathEditorView\obj\Debug\Window1.g.cs
+D:\Git Projects\MathEditor\MathEditorView\obj\Debug\App.g.cs
+D:\Git Projects\MathEditor\MathEditorView\obj\Debug\MathEditorView_MarkupCompile.cache
+D:\Git Projects\MathEditor\MathEditorView\obj\Debug\MathEditorView_MarkupCompile.lref
+D:\Git Projects\MathEditor\MathEditorView\obj\Debug\MainWindow.baml
+D:\Git Projects\MathEditor\MathEditorView\obj\Debug\Window1.baml
+D:\Git Projects\MathEditor\MathEditorView\obj\Debug\MathEditorView.g.resources
+D:\Git Projects\MathEditor\MathEditorView\obj\Debug\MathEditorView.Properties.Resources.resources
+D:\Git Projects\MathEditor\MathEditorView\obj\Debug\MathEditorView.csproj.GenerateResource.Cache
