@@ -23,8 +23,8 @@
         <DockPanel DockPanel.Dock="Bottom">
             <WrapPanel DockPanel.Dock="Left">
                 <ToggleButton Name="equationToggleButton" Content="公式" Click="ControlButton_Clicked"></ToggleButton>
-                <Button Name="restoreButton" Content="下一部分" Click="ControlButton_Clicked" Focusable="False"></Button>
-                <Button Name="exponentialButton" Content="指数" Click="ControlButton_Clicked" Focusable="False"></Button>
+                <Button Name="nextPartButton" Content="下一部分" Click="ControlButton_Clicked" Focusable="False"></Button>
+                <ToggleButton Name="exponentialButton" Content="指数" Click="ControlButton_Clicked" Focusable="False"></ToggleButton>
                 <Button Name="fractionButton" Content="分式" Click="ControlButton_Clicked" Focusable="False"></Button>
                 <Button Name="radicalButton" Content="根式" Click="ControlButton_Clicked" Focusable="False"></Button>
                 <Button Content="脚标"></Button>
@@ -63,7 +63,7 @@
         </WrapPanel>
         <Border BorderBrush="Orange" BorderThickness="1" DockPanel.Dock="Top">
             <Canvas Name="editorCanvas" Focusable="False" MouseLeftButtonDown="editorCanvas_MouseLeftButtonDown" Background="White" PreviewKeyDown="editorCanvas_PreviewKeyDown">
-                <TextBox Canvas.Left="0" Canvas.Top="10" Name="caretTextBox" Width="Auto" Height="Auto" Background="Transparent" BorderThickness="0" PreviewTextInput="caretTextBox_PreviewTextInput" FontFamily="{Binding Path=SelectedFontFamily.FontName}" Foreground="{Binding Path=SelectedColor}" FontSize="{Binding Path=SelectedFontSize}" ></TextBox>
+                <TextBox Canvas.Left="0" Canvas.Top="10" Name="caretTextBox" Width="Auto" Height="Auto"  Background="Transparent" BorderThickness="0" PreviewTextInput="caretTextBox_PreviewTextInput" FontFamily="{Binding Path=SelectedFontFamily.FontName}" Foreground="{Binding Path=SelectedColor}" FontSize="{Binding Path=SelectedFontSize}" ></TextBox>
             </Canvas>
         </Border>
         

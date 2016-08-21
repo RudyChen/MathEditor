@@ -55,8 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EquationFont.cs" />
+    <Compile Include="Models\FractionBlock.cs" />
+    <Compile Include="Models\ExponentialBlock.cs" />
+    <Compile Include="Models\BaseBlock.cs" />
     <Compile Include="ContentBlock.cs" />
+    <Compile Include="Enumes.cs" />
+    <Compile Include="Models\EquationBlock.cs" />
     <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="Models\MathTextBlock.cs" />
     <Compile Include="MyFontFamily.cs" />
     <Compile Include="TextBlockData.cs" />
     <Compile Include="ViewModelBase.cs" />

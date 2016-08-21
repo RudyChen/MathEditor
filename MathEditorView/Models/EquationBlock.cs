@@ -3,34 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 
 namespace MathEditorView
 {
-    public class RowBlock
+   public class EquationBlock:BaseBlock
     {
         private List<BaseBlock> blocks=new List<BaseBlock>();
 
-        private double rowTop;
+        private EquationType type;
 
-        private double height;
-
-        public double Height
+        public EquationType CurrentEquationType
         {
-            get { return height; }
-            set { height = value; }
+            get { return type; }
+            set { type = value; }
         }
 
-        public double RowTop
-        {
-            get { return rowTop; }
-            set { rowTop = value; }
-        }
 
         public List<BaseBlock> Blocks
         {
             get { return blocks; }
             set { blocks = value; }
         }
+
     }
 }

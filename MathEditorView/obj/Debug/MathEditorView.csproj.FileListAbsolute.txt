@@ -19,7 +19,6 @@ D:\Git Projects\MathEditor\MathEditorView\obj\Debug\MathEditorView.exe
 D:\Git Projects\MathEditor\MathEditorView\obj\Debug\MathEditorView.pdb
 D:\Git Projects\MathEditor\MathEditorView\bin\Debug\MathEditorView.exe
 D:\Git Projects\MathEditor\MathEditorView\bin\Debug\MathEditorView.pdb
-D:\Git Projects\MathEditor\MathEditorView\obj\Debug\MathEditorView.csprojResolveAssemblyReference.cache
 D:\Git Projects\MathEditor\MathEditorView\obj\Debug\MainWindow.g.cs
 D:\Git Projects\MathEditor\MathEditorView\obj\Debug\Window1.g.cs
 D:\Git Projects\MathEditor\MathEditorView\obj\Debug\App.g.cs
@@ -30,3 +29,4 @@ D:\Git Projects\MathEditor\MathEditorView\obj\Debug\Window1.baml
 D:\Git Projects\MathEditor\MathEditorView\obj\Debug\MathEditorView.g.resources
 D:\Git Projects\MathEditor\MathEditorView\obj\Debug\MathEditorView.Properties.Resources.resources
 D:\Git Projects\MathEditor\MathEditorView\obj\Debug\MathEditorView.csproj.GenerateResource.Cache
+D:\Git Projects\MathEditor\MathEditorView\obj\Debug\MathEditorView.csprojResolveAssemblyReference.cache
